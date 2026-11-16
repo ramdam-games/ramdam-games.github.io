@@ -156,7 +156,7 @@ def build_home():
 <section class="home-hero" id="jeux">
   <div class="home-head wrap">
     <p class="kicker">Ramdam Games</p>
-    <h1>Nos jeux</h1>
+    <h1>Les jeux</h1>
     <p class="lead">Choisis un jeu pour voir ses images, ce qu'on y fait et tout ce qui a changé depuis la dernière version.</p>
   </div>
   <div class="picker">
@@ -329,7 +329,7 @@ def build_journal():
   <header class="journal-head">
     <p class="kicker">Ramdam Games</p>
     <h1>Journal de développement</h1>
-    <p class="lead">Les notes de version de tous nos jeux, de la plus récente à la plus ancienne.</p>
+    <p class="lead">Les notes de version de tous les jeux, de la plus récente à la plus ancienne.</p>
     <div class="chips" role="group" aria-label="Filtrer par jeu">{chips}</div>
   </header>
   <div class="entries all">{entries}</div>
