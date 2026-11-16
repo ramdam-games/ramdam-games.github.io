@@ -171,9 +171,14 @@ def build_home():
             ("p-monique", cast + "monique.webp", "1.25"),
             ("p-manchot", cast + "manchot.webp", "1.1"),
         ))
-    runners = ["belier", "cochon", "kangourou", "mouton", "zebre", "lion", "poule", "elephant", "chevre",
-               "rhinoceros", "lapin", "tortue", "singe", "flamant", "panthere"]
-    parade = "".join(f'<img src="{cast}{k}.webp" alt="" loading="lazy">' for k in runners) * 2
+    runners = [("lapin", .5), ("poule", .55), ("autruche", 1.5), ("belier", .85), ("cochon", .75),
+               ("zebre", 1.1), ("kangourou", 1), ("lion", 1), ("mouton", .8), ("elephant", 1.45),
+               ("chevre", .8), ("flamant", 1.15), ("rhinoceros", 1.05), ("singe", .85), ("lama", 1.15),
+               ("panthere", .95), ("tortue", .55), ("camionnette", 1.1, "chaser"),
+               ("garde", 1.45, "chaser"), ("dede", 1.45, "chaser")]
+    parade = "".join(
+        f'<img class="{r[2] if len(r) > 2 else "runner"}" src="{cast}{r[0]}.webp" alt="" style="--h:{r[1]}">'
+        for r in runners) * 2
     village_items = (
         ("village/eglise", 3, 96, 1, ".25"),
         ("village/granderoue", 49, 100, 1, ".25"),

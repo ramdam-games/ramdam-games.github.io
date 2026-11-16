@@ -539,12 +539,14 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   animation-delay: calc(1.15s + var(--i) * .07s);
 }
 @keyframes popup { from { transform: scaleY(0); opacity: 0; } 30% { opacity: 1; } to { transform: none; opacity: 1; } }
-.parade { position: relative; background: #140d0e; padding: 22px 0 14px; overflow: hidden; }
+.parade { position: relative; background: #140d0e; padding: 30px 0 16px; overflow: hidden; }
 .parade-track { display: flex; align-items: flex-end; width: max-content; animation: run 70s linear infinite; }
 .parade:hover .parade-track { animation-play-state: paused; }
-.parade img { height: 78px; width: auto; margin-right: 54px; animation: trot .42s ease-in-out infinite alternate; filter: drop-shadow(0 6px 4px rgba(0, 0, 0, .45)); }
+.parade img { height: calc(var(--h, 1) * 72px); width: auto; margin-right: 34px; animation: trot .42s ease-in-out infinite alternate; filter: drop-shadow(0 6px 4px rgba(0, 0, 0, .45)); }
 .parade img:nth-child(3n+1) { animation-delay: -.14s; }
 .parade img:nth-child(3n+2) { animation-delay: -.28s; }
+.parade .chaser { animation-duration: .3s; }
+.parade img[src*="camionnette"] { margin-left: 70px; }
 @keyframes rise { from { transform: translateY(.45em); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes drop { from { transform: translateY(-1.4em) rotate(-8deg); opacity: 0; } 55% { opacity: 1; } to { transform: none; opacity: 1; } }
 @keyframes sway { from { transform: rotate(-2.2deg); } to { transform: rotate(2.2deg); } }
@@ -555,5 +557,5 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 @media (max-width: 560px) {
   .ramdam-in { padding-top: 104px; }
-  .parade img { height: 56px; margin-right: 34px; }
+  .parade img { height: calc(var(--h, 1) * 50px); margin-right: 22px; }
 }
