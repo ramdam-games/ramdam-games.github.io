@@ -171,11 +171,10 @@ def build_home():
             ("p-monique", cast + "monique.webp", "1.25"),
             ("p-manchot", cast + "manchot.webp", "1.1"),
         ))
-    runners = [("lapin", .5), ("poule", .55), ("autruche", 1.5), ("belier", .85), ("cochon", .75),
-               ("zebre", 1.1), ("kangourou", 1), ("lion", 1), ("mouton", .8), ("elephant", 1.45),
-               ("chevre", .8), ("flamant", 1.15), ("rhinoceros", 1.05), ("singe", .85), ("lama", 1.15),
-               ("panthere", .95), ("tortue", .55), ("camionnette", 1.1, "chaser"),
-               ("garde", 1.45, "chaser"), ("dede", 1.45, "chaser")]
+    runners = [("lapin", .5), ("zebre", 1.1), ("elephant", 1.45), ("cochon", .75), ("poule", .55),
+               ("chasseur-filet", 1.6, "chaser"), ("autruche", 1.5), ("lion", 1), ("mouton", .8),
+               ("chasseur-fusil", 1.3, "hunter"), ("camionnette", 1.1, "chaser"),
+               ("chasseur-prise", 1.55, "chaser")]
     parade = "".join(
         f'<img class="{r[2] if len(r) > 2 else "runner"}" src="{cast}{r[0]}.webp" alt="" style="--h:{r[1]}">'
         for r in runners) * 2
