@@ -1,0 +1,136 @@
+[
+  {
+    "version": "1.6.4",
+    "date": "2026-09-12",
+    "new": [
+      "Ouverture en cinématique, et des décors propres à chaque niveau et à chaque monde.",
+      "Tous les écrans passent sur la même matière : bois, liège, parchemin et encre.",
+      "Panneaux suspendus partout dans l'interface.",
+      "Nouvelle boucle musicale acoustique, guitare nylon, flûte et chants d'oiseaux.",
+      "Les chaînes peuvent se séparer en deux.",
+      "Passe complète sur le jeu au toucher."
+    ],
+    "fixed": [
+      "Panneau de fin de niveau plus sobre, les étoiles reviennent sur le plateau."
+    ],
+    "edited": true
+  },
+  {
+    "version": "1.6.3",
+    "date": "2026-09-05",
+    "new": [
+      "Événements sur le plateau pendant la partie.",
+      "Le guide s'appuie sur un solveur qui tourne en direct, ses conseils sont toujours jouables."
+    ],
+    "fixed": [],
+    "edited": true
+  },
+  {
+    "version": "1.6.2",
+    "date": "2026-09-02",
+    "new": [
+      "Écran d'accueil redessiné : la clairière vivante, le logo et un rail en bois aux boutons ronds.",
+      "Un bouton Multijoueur grisé annonce la suite."
+    ],
+    "fixed": [
+      "Les rochers de l'accueil reposent sur la terre, avec leur ombre.",
+      "La frontière de floraison de l'accueil ne tremble plus."
+    ],
+    "edited": true
+  },
+  {
+    "version": "1.6.1",
+    "date": "2026-09-01",
+    "new": [],
+    "fixed": [
+      "Zones de toucher à la taille du doigt sur les boutons ronds, le geste de rotation est nommé sur écran tactile."
+    ],
+    "edited": true
+  },
+  {
+    "version": "1.6.0",
+    "date": "2026-09-01",
+    "new": [
+      "Une pièce posée reste où on l'a mise.",
+      "Une partie perdue recommence d'un geste, gratuitement."
+    ],
+    "fixed": [],
+    "edited": true
+  },
+  {
+    "version": "1.5.0",
+    "date": "2026-08-30",
+    "new": [
+      "Pièces déplaçables à la souris, et un guide central qui ne donne plus de conseil inutile.",
+      "Pastille de rotation au survol d'une pièce, un clic la tourne d'un quart de tour.",
+      "Une machine qui fleurit soigne aussi sa propre case.",
+      "Le guidage indique le sens : pose orientée sur la case suggérée et chevrons sur les pièces mal tournées.",
+      "Tutoriel complet avec usine en direct."
+    ],
+    "fixed": [
+      "Un seul guide à la fois à l'écran, plus jamais d'écran muet.",
+      "L'aide activée reste pour tout le niveau.",
+      "Les bulles d'annonce ne s'impriment plus à travers les autres textes."
+    ],
+    "edited": true
+  },
+  {
+    "version": "1.4.1",
+    "date": "2026-08-07",
+    "new": [
+      "De vrais cumulus dans le ciel.",
+      "Le diorama repose sur une vraie table en bois."
+    ],
+    "fixed": [],
+    "edited": true
+  },
+  {
+    "version": "1.4.0",
+    "date": "2026-08-07",
+    "new": [
+      "Un arc-en-ciel après l'averse, et un écran de fin qui respire.",
+      "Une petite guide accompagne tout le tutoriel et fête chaque étape réussie.",
+      "La pêche et les cadeaux de l'usine sur tous les niveaux.",
+      "Cartes-défis distribuées en début de niveau, sur tous les types de niveau.",
+      "Les panneaux portent la signature florale du titre."
+    ],
+    "fixed": [
+      "Plus aucun chevauchement dans l'interface."
+    ],
+    "edited": true
+  },
+  {
+    "version": "1.3.8",
+    "date": "2026-07-08",
+    "new": [
+      "Page du jeu avec bande-annonce et captures."
+    ],
+    "fixed": [
+      "Le mode tactile ne parle plus de la touche R."
+    ],
+    "edited": true
+  },
+  {
+    "version": "1.3.4",
+    "date": "2026-07-06",
+    "new": [
+      "Le logo du jeu partout : fenêtre, exécutable Windows, lanceur Android, onglet du navigateur.",
+      "Écran de démarrage avec la mascotte."
+    ],
+    "fixed": [
+      "Le jeu ne plante plus sur Android quand la musique boucle.",
+      "Deux boutons contextuels au toucher au lieu de cinq."
+    ],
+    "edited": true
+  },
+  {
+    "version": "1.0",
+    "date": "2026-07-02",
+    "new": [
+      "Première version publiée : campagne, mode infini, six bâtiments, options, anglais et français.",
+      "Sprites pixel pour tout le monde du jeu et carte du monde en voxels."
+    ],
+    "fixed": [],
+    "edited": true
+  }
+]

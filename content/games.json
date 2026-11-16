@@ -1,0 +1,485 @@
+{
+  "studio": {
+    "name": "Ramdam Games",
+    "url": "https://ramdam-games.github.io/",
+    "tagline": "Petit studio indépendant, en France.",
+    "about": [
+      "Ramdam Games, c'est deux personnes qui font des jeux le soir et le week-end, en France. On aime les jeux qu'on lance avec des amis pour une partie et qu'on quitte trois heures plus tard.",
+      "Chaque jeu a sa page, ses images et son journal de développement. On y note ce qui change d'une version à l'autre, des grosses nouveautés aux petites corrections."
+    ],
+    "discord": "https://discord.gg/k4crjTtuuf",
+    "github": "https://github.com/ramdam-games"
+  },
+  "games": [
+    {
+      "slug": "la-fourriere",
+      "title": "La Fourrière",
+      "theme": "fourriere",
+      "status": "En développement",
+      "status_kind": "dev",
+      "genre": "Chasse aux bêtes en coopération",
+      "short": "Le zoo de Poulaillac s'est vidé pendant la fête du village. Une épuisette, une camionnette hors d'âge, et tout un bourg à remettre en ordre, seul ou jusqu'à quatre.",
+      "platforms": [
+        "PC"
+      ],
+      "players": "1 à 4 joueurs, en ligne",
+      "engine": "Unity",
+      "card_image": "fourriere/bernard-mairie.jpg",
+      "hero_image": "fourriere/bernard-mairie.jpg",
+      "hero_card": {
+        "alt": "Bernard le gorille devant la mairie de Poulaillac, un jour de fête.",
+        "pops": [
+          "lama",
+          "poule",
+          "autruche"
+        ]
+      },
+      "pitch": [
+        "Poulaillac, petite commune avec un vieux zoo municipal. Le soir de la fête du village, quelqu'un laisse la grille ouverte. Au matin, il y a un lama dans le lotissement, une autruche au marché et un gorille sur le toit de la mairie.",
+        "Le tribunal a tranché. Travaux d'intérêt général à la fourrière, jusqu'à la dernière bête. On commence à pied avec une épuisette, on finit avec un fusil à fléchettes, un lasso et une camionnette qui tient avec du scotch."
+      ],
+      "features": [
+        {
+          "title": "Six quartiers, six chapitres",
+          "text": "Le lotissement des Lilas, le centre-ville un jour de marché, la zone commerciale, la base de loisirs, la campagne de nuit, puis le zoo. Chaque lieu a ses bêtes, son quota et sa boutique.",
+          "image": "fourriere/fete.jpg"
+        },
+        {
+          "title": "Des outils qui s'achètent",
+          "text": "Épuisette, lasso, fusil à fléchettes endormantes, mégaphone, poêle à frire, bouées, buisson portatif. Dédé, le garagiste, les vend. Les primes du maire les paient.",
+          "image": "fourriere/poele.jpg"
+        },
+        {
+          "title": "Des boss qui ont du caractère",
+          "text": "Le bélier du rond-point, Bernard le gorille sur le toit de la mairie, Monique l'hippopotame qui a pris la piscine municipale. Ils repèrent le joueur le plus proche et foncent.",
+          "image": "fourriere/boss-charge.jpg"
+        },
+        {
+          "title": "Un village qui parle",
+          "text": "Josiane à l'accueil de la mairie, Mme Pichon et son géranium, le garde champêtre et ses constats de dégâts. Les habitants commentent tout, surtout ce qu'il ne fallait pas faire.",
+          "image": "fourriere/mme-pichon.jpg"
+        }
+      ],
+      "cast_title": "Les fuyards",
+      "cast_lead": "Une trentaine d'espèces se promènent dans Poulaillac. Certaines se laissent attraper. D'autres crachent.",
+      "cast": [
+        [
+          "bernard",
+          "Bernard",
+          "Gorille, boss du centre-ville"
+        ],
+        [
+          "monique",
+          "Monique",
+          "Hippopotame, boss de la piscine"
+        ],
+        [
+          "belier",
+          "Le bélier",
+          "Boss du rond-point"
+        ],
+        [
+          "lama",
+          "Lama",
+          "Crache"
+        ],
+        [
+          "autruche",
+          "Autruche",
+          "Rapide"
+        ],
+        [
+          "girafe",
+          "Girafe",
+          "Se voit de loin"
+        ],
+        [
+          "lion",
+          "Lion",
+          "La nuit, à l'église"
+        ],
+        [
+          "elephant",
+          "Éléphant",
+          "Au rayon frais"
+        ],
+        [
+          "manchot",
+          "Manchot",
+          "Base de loisirs"
+        ],
+        [
+          "kangourou",
+          "Kangourou",
+          "Zone commerciale"
+        ],
+        [
+          "singe",
+          "Singe",
+          "Ouvre les cages"
+        ],
+        [
+          "zebre",
+          "Zèbre",
+          "Zone commerciale"
+        ],
+        [
+          "rhinoceros",
+          "Rhinocéros",
+          "Au péage"
+        ],
+        [
+          "panthere",
+          "Panthère",
+          "Seulement la nuit"
+        ],
+        [
+          "tortue",
+          "Tortue géante",
+          "Pas pressée"
+        ],
+        [
+          "flamant",
+          "Flamant",
+          "Au bord du lac"
+        ],
+        [
+          "poule",
+          "Poule",
+          "Lotissement des Lilas"
+        ],
+        [
+          "cochon",
+          "Cochon",
+          "Lotissement des Lilas"
+        ],
+        [
+          "mouton",
+          "Mouton",
+          "Lotissement des Lilas"
+        ],
+        [
+          "chevre",
+          "Chèvre",
+          "Mange les haies"
+        ],
+        [
+          "lapin",
+          "Lapin",
+          "Partout"
+        ]
+      ],
+      "people_title": "Les habitants",
+      "people": [
+        [
+          "maire",
+          "Le maire",
+          "Ne pense qu'au jury des villages fleuris."
+        ],
+        [
+          "josiane",
+          "Josiane",
+          "Secrétaire de mairie, voix de la radio."
+        ],
+        [
+          "dede",
+          "Dédé",
+          "Garagiste. Vend les outils, répare la camionnette."
+        ],
+        [
+          "garde",
+          "Le garde champêtre",
+          "Ses constats de dégâts se déduisent des primes."
+        ],
+        [
+          "mmepichon",
+          "Mme Pichon",
+          "A perdu un géranium. Elle en parle encore."
+        ],
+        [
+          "vasseur",
+          "M. Vasseur",
+          "Directeur du zoo. Très, très serviable."
+        ]
+      ],
+      "gear": [
+        [
+          "epuisette",
+          "L'épuisette"
+        ],
+        [
+          "fusil",
+          "Le fusil à fléchettes"
+        ],
+        [
+          "camionnette",
+          "La camionnette"
+        ]
+      ],
+      "gallery": [
+        [
+          "bernard-mairie",
+          "Bernard a pris la mairie le jour de la fête."
+        ],
+        [
+          "fete",
+          "Le centre-ville un jour de marché."
+        ],
+        [
+          "plage",
+          "La cabane du plagiste, à la base de loisirs."
+        ],
+        [
+          "poele",
+          "La poêle à frire. Efficace."
+        ],
+        [
+          "camionnette",
+          "La camionnette de la fourrière municipale."
+        ],
+        [
+          "lama",
+          "Un lama dans le lotissement."
+        ],
+        [
+          "lunette",
+          "Le fusil à fléchettes endormantes."
+        ],
+        [
+          "hyper",
+          "La zone commerciale et son futur hyper."
+        ],
+        [
+          "maire",
+          "Le maire, très inquiet pour son concours."
+        ],
+        [
+          "fourriere",
+          "La fourrière municipale, où tout finit."
+        ],
+        [
+          "bave",
+          "Le lama a craché."
+        ],
+        [
+          "fin",
+          "Poulaillac est propre."
+        ]
+      ],
+      "facts": [
+        [
+          "Joueurs",
+          "1 à 4, en ligne"
+        ],
+        [
+          "Plateforme",
+          "PC (Windows)"
+        ],
+        [
+          "Langues",
+          "Français, anglais"
+        ],
+        [
+          "Moteur",
+          "Unity"
+        ],
+        [
+          "Sortie",
+          "Pas encore de date"
+        ]
+      ],
+      "where": [
+        [
+          "PC",
+          "En développement",
+          "La page Steam et son bouton de liste de souhaits arriveront ici dès qu'elles seront en ligne."
+        ]
+      ],
+      "source": {
+        "repo": "ramdam-games/la-fourriere",
+        "local": "E:/CoopBase",
+        "mode": "days"
+      }
+    },
+    {
+      "slug": "bloomstead",
+      "title": "Bloomstead",
+      "theme": "bloomstead",
+      "status": "Version 1.6.4",
+      "status_kind": "live",
+      "genre": "Casse-tête d'automatisation cosy",
+      "short": "Le monde s'est éteint. Pose quelques machines, pour de bon, et laisse ton usine faire refleurir la terre case après case.",
+      "platforms": [
+        "PC",
+        "Android",
+        "Navigateur"
+      ],
+      "players": "1 joueur",
+      "engine": "Godot 4",
+      "card_image": "bloomstead/hero.jpg",
+      "hero_image": "bloomstead/hero.jpg",
+      "trailer": "https://ramdam-games.github.io/bloomstead-privacy/media/bloomstead_trailer.mp4",
+      "trailer_poster": "bloomstead/accueil.jpg",
+      "trailer_credit": "Musique de la bande-annonce : « Wholesome », Kevin MacLeod (incompetech.com), CC BY 4.0.",
+      "pitch": [
+        "Chaque niveau est une petite énigme d'usine. Un stock de pièces, une clairière fanée. Une pièce posée reste où on l'a mise, et les pièces qu'il reste à la fin sont les étoiles.",
+        "Extracteur sur un cristal, tapis à travers la poussière, floreur au bout de la ligne. Les pousses roulent sur les tapis et l'herbe revient là où l'usine tient. Rater ne coûte rien, on recommence d'un geste."
+      ],
+      "features": [
+        {
+          "title": "Lire le terrain",
+          "text": "Les cristaux contiennent la sève, les rochers et les mares dessinent le trajet. Avant de poser, la portée d'une machine s'allume sur les cases qu'elle ferait fleurir.",
+          "image": "bloomstead/prairie.jpg"
+        },
+        {
+          "title": "Neuf biomes",
+          "text": "Prairie, automne, toundra, crépuscule, jungle, sakura, émeraude, désert et corail. Trente et un niveaux faits main, puis des îles générées à l'infini, toutes solubles.",
+          "image": "bloomstead/sakura.jpg"
+        },
+        {
+          "title": "Une île vivante",
+          "text": "Des mares où pêcher pendant que les tapis tournent, un marchand, des coffres enterrés, une heure dorée, un défi du jour et un jardin libre avec mode photo.",
+          "image": "bloomstead/ile.jpg"
+        },
+        {
+          "title": "La carte du monde",
+          "text": "Les mondes s'enchaînent sur une carte en relief. Neuf types de niveaux changent la règle en route : ateliers fixes, labyrinthes, marées, livraisons, jardins de thé.",
+          "image": "bloomstead/carte.jpg"
+        }
+      ],
+      "machines_title": "Neuf machines",
+      "machines": [
+        [
+          "extractor",
+          "Extracteur",
+          "Tire la sève d'un cristal."
+        ],
+        [
+          "belt",
+          "Tapis",
+          "Transporte les pousses."
+        ],
+        [
+          "bloomer",
+          "Floreur",
+          "Fait fleurir quelques cases."
+        ],
+        [
+          "greenhouse",
+          "Serre",
+          "Fait fleurir une large zone."
+        ],
+        [
+          "splitter",
+          "Aiguillage",
+          "Deux sorties."
+        ],
+        [
+          "dynamo",
+          "Dynamo",
+          "Accélère les tapis voisins."
+        ],
+        [
+          "sprinkler",
+          "Arroseur",
+          "Toute une zone d'un coup."
+        ],
+        [
+          "tunnel",
+          "Tunnel",
+          "Passe sous les rochers."
+        ],
+        [
+          "pump",
+          "Pompe",
+          "Sur l'eau, accélère la floraison."
+        ]
+      ],
+      "gallery": [
+        [
+          "accueil",
+          "L'écran d'accueil, la clairière déjà en marche."
+        ],
+        [
+          "prairie",
+          "Une usine dans la prairie."
+        ],
+        [
+          "jungle",
+          "La vague de floraison dans la jungle."
+        ],
+        [
+          "desert",
+          "Le désert."
+        ],
+        [
+          "sakura",
+          "Le monde sakura."
+        ],
+        [
+          "carte",
+          "La carte des niveaux."
+        ],
+        [
+          "jardin",
+          "Le jardin."
+        ],
+        [
+          "ile",
+          "L'île vivante."
+        ]
+      ],
+      "facts": [
+        [
+          "Joueurs",
+          "1"
+        ],
+        [
+          "Plateformes",
+          "PC, Android, navigateur"
+        ],
+        [
+          "Langues",
+          "Anglais, français"
+        ],
+        [
+          "Moteur",
+          "Godot 4"
+        ],
+        [
+          "Niveaux",
+          "31 faits main, puis à l'infini"
+        ]
+      ],
+      "links": [
+        [
+          "Politique de confidentialité",
+          "https://ramdam-games.github.io/bloomstead-privacy/privacy.html"
+        ]
+      ],
+      "where": [
+        [
+          "PC",
+          "En préparation",
+          "Steam et itch.io. La page Steam arrivera ici dès qu'elle sera en ligne."
+        ],
+        [
+          "Android",
+          "En préparation",
+          "Google Play, entièrement jouable au toucher."
+        ],
+        [
+          "Navigateur",
+          "En préparation",
+          "Le même jeu dans un onglet, sur les portails web."
+        ]
+      ],
+      "source": {
+        "repo": "ramdam-games/bloodstead",
+        "local": "~/Desktop/Bloomstead",
+        "mode": "tags",
+        "tag_glob": "v*"
+      }
+    }
+  ]
+}

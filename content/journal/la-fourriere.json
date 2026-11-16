@@ -1,0 +1,46 @@
+[
+  {
+    "version": "Build du 16 novembre",
+    "date": "2026-11-16",
+    "new": [
+      "Une boutique dans chaque quartier, avec son propre outil. Mégaphone à la zone commerciale, bouées à la base de loisirs, poêle à frire à la campagne, buisson portatif et bombe soporifique au zoo.",
+      "Les habitants parlent dans des bulles de bande dessinée, au-dessus de leur tête.",
+      "Les boss repèrent le joueur le plus proche, se cabrent et viennent le charger.",
+      "Combats de boss avec coups annoncés au sol, grande barre de vie et épingle sur la cible.",
+      "Routes sinueuses avec de la boue, passants, radar de vitesse.",
+      "Déchargement automatique à la fourrière et relais de dépôt dans les quartiers.",
+      "Film de fin, grande roue de la fête, course de poules avec paris, pétards, boisson énergisante, outils qu'on peut lancer.",
+      "Registre du zoo. Une bête rendue y reste, et le village est propre quand il n'en reste plus.",
+      "Nouvelle interface, carte aérienne, radar et quota par lieu. Les habitants se laissent taquiner.",
+      "L'écran de fin affiche le jour, l'heure de la dernière prise et le temps de jeu."
+    ],
+    "fixed": [
+      "La camionnette peut atteindre tous les lieux, les panneaux ne sont plus sur la route.",
+      "Aucune bête ne saute plus une barrière, les gros boss ne sautent plus rien.",
+      "L'herbe ne traverse plus les étals, les relais et les barrières.",
+      "Son plus calme, plus de drapeau à la fourrière.",
+      "La langue suit celle de Windows au premier lancement."
+    ],
+    "edited": true
+  },
+  {
+    "version": "Build du 15 novembre",
+    "date": "2026-11-15",
+    "new": [
+      "Premier prototype jouable en coopération en ligne.",
+      "Journées de travail avec le quota du maire, sept quartiers, menus, options et sauvegarde.",
+      "Chapitres d'histoire et fête du village.",
+      "Départ à pied avec une épuisette, vente des bêtes au guichet de Josiane.",
+      "Les bêtes, le décor et les personnages en modèles 3D faits pour le jeu, style low-poly aux grands yeux ronds.",
+      "Ceinture d'outils, besace et lasso, prise portée dans le filet.",
+      "Six lieux bordés de haies et une nouvelle fourrière.",
+      "Camionnette ouverte avec un vrai poste de conduite, boss, jour et nuit.",
+      "Touches réglables, options graphiques, anglais et français.",
+      "La touche P, et des bêtes qui s'en souviennent."
+    ],
+    "fixed": [
+      "Chargement de la camionnette en une seule touche."
+    ],
+    "edited": true
+  }
+]

@@ -1,0 +1,53 @@
+name: Journal
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [game-updated]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: journal
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch the game histories (commits only, no files)
+        env:
+          FOURRIERE_KEY: ${{ secrets.FOURRIERE_READ_KEY }}
+          BLOOMSTEAD_KEY: ${{ secrets.BLOOMSTEAD_READ_KEY }}
+        run: |
+          mkdir -p ~/.ssh _games
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null
+          fetch() {
+            printf '%s\n' "$2" > ~/.ssh/key_$1 && chmod 600 ~/.ssh/key_$1
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/key_$1 -o IdentitiesOnly=yes" \
+              git clone --quiet --bare --filter=blob:none "git@github.com:ramdam-games/$3.git" "_games/$1"
+          }
+          fetch la-fourriere "$FOURRIERE_KEY" la-fourriere
+          fetch bloomstead "$BLOOMSTEAD_KEY" bloodstead
+
+      - name: Update the journals and rebuild the pages
+        run: |
+          python tools/sync_journal.py --checkout la-fourriere=_games/la-fourriere --checkout bloomstead=_games/bloomstead
+          python tools/build.py
+
+      - name: Publish if anything changed
+        run: |
+          git add content/journal docs
+          if git diff --cached --quiet; then
+            echo "Nothing new in the game repositories."
+            exit 0
+          fi
+          git config user.name "ramdam-journal"
+          git config user.email "ramdam-journal@users.noreply.github.com"
+          git commit -m "Journal updated from the game repositories"
+          git push
