@@ -174,6 +174,25 @@ def build_home():
     runners = ["belier", "cochon", "kangourou", "mouton", "zebre", "lion", "poule", "elephant", "chevre",
                "rhinoceros", "lapin", "tortue", "singe", "flamant", "panthere"]
     parade = "".join(f'<img src="{cast}{k}.webp" alt="" loading="lazy">' for k in runners) * 2
+    village_items = (
+        ("village/eglise", 3, 96, 1, ".25"),
+        ("village/granderoue", 49, 100, 1, ".25"),
+        ("village/chateaueau", 84, 82, 1, ".25"),
+        ("village/commerce1", -1, 74, 2, ".4"),
+        ("village/lampadaire", 15, 50, 3, ".5"),
+        ("village/mairie", 21, 64, 2, ".4"),
+        ("village/lilas", 42, 56, 2, ".45"),
+        ("village/manege", 57, 40, 3, ".55"),
+        ("village/pavillon3", 70, 56, 2, ".4"),
+        ("village/cypres", 95, 66, 2, ".45"),
+        ("cast/maire", 33, 34, 4, ".7"),
+        ("village/mascotte", 11, 30, 4, ".7"),
+        ("cast/garde", 52, 33, 4, ".7"),
+        ("cast/mmepichon", 83, 30, 4, ".7"),
+    )
+    village = "".join(
+        f'<img src="assets/img/fourriere/{src}.webp" alt="" style="left:{left}%;height:{h}%;z-index:{z};--d:{d};--i:{i}">'
+        for i, (src, left, h, z, d) in enumerate(village_items))
     games_links = " et ".join(f'<a href="jeux/{g["slug"]}/index.html">{e(g["title"])}</a>' for g in DATA["games"])
     body = f"""<main>
 <section class="ramdam" aria-label="Ramdam Games">
@@ -185,6 +204,7 @@ def build_home():
     </h1>
     <p class="ramdam-sub">Studio de jeux indépendant, en France. Tout le zoo s'est échappé ici : {games_links}.</p>
     <a class="ramdam-down" href="#jeux">Voir les jeux</a>
+    <div class="village" aria-hidden="true">{village}</div>
   </div>
   <div class="parade" aria-hidden="true"><div class="parade-track">{parade}</div></div>
 </section>
