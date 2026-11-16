@@ -403,6 +403,25 @@ def build_404():
                            theme="studio", depth=0, path="404.html"))
 
 
+def build_redirects():
+    """The Bloomstead site moved from /bloomstead-privacy/ to /bloomstead/: keep the old links alive."""
+    for name in ("index.html", "privacy.html", "versions.html", "game.html"):
+        target = "/bloomstead/" + ("" if name == "index.html" else name)
+        write(f"bloomstead-privacy/{name}", f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bloomstead</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://ramdam-games.github.io{target}">
+<meta http-equiv="refresh" content="0; url={target}">
+<script>location.replace("{target}" + location.hash);</script>
+</head>
+<body><p>This page moved to <a href="{target}">ramdam-games.github.io{target}</a>.</p></body>
+</html>
+""")
+
+
 def write(rel, text):
     path = os.path.join(DOCS, rel)
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -422,6 +441,7 @@ def main():
         build_game(g)
     build_journal()
     build_404()
+    build_redirects()
     with open(os.path.join(DOCS, "assets", "favicon.svg"), "w", encoding="utf-8") as f:
         f.write(mark_svg(64).replace('class="mark" ', 'xmlns="http://www.w3.org/2000/svg" ')
                 .replace("var(--brand-ink)", "#1b0f0b").replace("var(--brand)", "#ff5a36"))

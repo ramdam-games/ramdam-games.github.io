@@ -318,7 +318,7 @@
       "engine": "Godot 4",
       "card_image": "bloomstead/hero.jpg",
       "hero_image": "bloomstead/hero.jpg",
-      "trailer": "https://ramdam-games.github.io/bloomstead-privacy/media/bloomstead_trailer.mp4",
+      "trailer": "https://ramdam-games.github.io/bloomstead/media/bloomstead_trailer.mp4",
       "trailer_poster": "bloomstead/accueil.jpg",
       "trailer_credit": "Musique de la bande-annonce : « Wholesome », Kevin MacLeod (incompetech.com), CC BY 4.0.",
       "pitch": [
@@ -454,7 +454,7 @@
       "links": [
         [
           "Politique de confidentialité",
-          "https://ramdam-games.github.io/bloomstead-privacy/privacy.html"
+          "https://ramdam-games.github.io/bloomstead/privacy.html"
         ]
       ],
       "where": [
