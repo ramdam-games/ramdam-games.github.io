@@ -1,5 +1,6 @@
 """Build the static Ramdam Games site from content/games.json into docs/."""
 import datetime
+import hashlib
 import html
 import json
 import os
@@ -12,6 +13,11 @@ FONTS = ("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght
          "&family=Figtree:wght@400;500;600;700&family=Zilla+Slab:wght@500;700&family=VT323&display=swap")
 
 e = html.escape
+
+
+def asset_version(name):
+    with open(os.path.join(DOCS, "assets", name), "rb") as f:
+        return hashlib.sha1(f.read()).hexdigest()[:8]
 
 
 def fr_date(iso):
@@ -49,13 +55,13 @@ def page(*, title, description, body, theme, depth, path, og_image=None, body_cl
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
-<link rel="stylesheet" href="{up}assets/site.css">
+<link rel="stylesheet" href="{up}assets/site.css?v={asset_version("site.css")}">
 </head>
 <body class="t-{theme} {body_class}">
 {nav(up)}
 {body}
 {footer(up)}
-<script src="{up}assets/site.js" defer></script>
+<script src="{up}assets/site.js?v={asset_version("site.js")}" defer></script>
 </body>
 </html>
 """
