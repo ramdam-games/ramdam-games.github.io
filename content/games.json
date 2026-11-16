@@ -2,10 +2,10 @@
   "studio": {
     "name": "Ramdam Games",
     "url": "https://ramdam-games.github.io/",
-    "tagline": "Petit studio indépendant, en France.",
+    "tagline": "Studio indépendant d'une personne, en France.",
     "about": [
-      "Ramdam Games, c'est deux personnes qui font des jeux le soir et le week-end, en France. On aime les jeux qu'on lance avec des amis pour une partie et qu'on quitte trois heures plus tard.",
-      "Chaque jeu a sa page, ses images et son journal de développement. On y note ce qui change d'une version à l'autre, des grosses nouveautés aux petites corrections."
+      "Ramdam Games, c'est une seule personne, en France, qui fait des jeux le soir et le week-end. Des jeux qu'on lance avec des amis pour une partie et qu'on quitte trois heures plus tard.",
+      "Chaque jeu a sa page, ses images et son journal de développement. J'y note ce qui change d'une version à l'autre, des grosses nouveautés aux petites corrections."
     ],
     "discord": "https://discord.gg/k4crjTtuuf",
     "github": "https://github.com/ramdam-games"
