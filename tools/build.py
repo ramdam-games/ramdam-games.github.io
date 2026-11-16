@@ -37,7 +37,16 @@ def mark_svg(size=34):
 def page(*, title, description, body, theme, depth, path, og_image=None, body_class=""):
     up = "../" * depth
     base = "https://ramdam-games.github.io/"
-    og = f'<meta property="og:image" content="{base}assets/img/{og_image}">' if og_image else ""
+    og = ""
+    if og_image:
+        image = f"{base}assets/{og_image}?v={asset_version(og_image)}"
+        og = "\n".join([
+            f'<meta property="og:image" content="{image}">',
+            '<meta property="og:image:width" content="1200">',
+            '<meta property="og:image:height" content="630">',
+            f'<meta property="og:image:alt" content="{e(title)}">',
+            f'<meta name="twitter:image" content="{image}">',
+        ])
     return f"""<!doctype html>
 <html lang="fr">
 <head>
@@ -48,6 +57,9 @@ def page(*, title, description, body, theme, depth, path, og_image=None, body_cl
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Ramdam Games">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="{THEME_COLORS[theme]}">
 <meta property="og:url" content="{base}{path}">
 {og}
 <meta name="twitter:card" content="summary_large_image">
@@ -65,6 +77,9 @@ def page(*, title, description, body, theme, depth, path, og_image=None, body_cl
 </body>
 </html>
 """
+
+
+THEME_COLORS = {"studio": "#ff5a36", "fourriere": "#e0603a", "bloomstead": "#7ccf4d"}
 
 
 def nav(up):
@@ -241,8 +256,8 @@ def build_home():
   </dl>
 </section>
 </main>"""
-    write("index.html", page(title="Ramdam Games", description="Petit studio de jeux indépendant, en France. La Fourrière et Bloomstead.",
-                             body=body, theme="studio", depth=0, path="", og_image="fourriere/bernard-mairie.jpg", body_class="home"))
+    write("index.html", page(title="Ramdam Games", description=DATA["studio"]["share"],
+                             body=body, theme="studio", depth=0, path="", og_image="og/home.jpg", body_class="home"))
 
 
 def news_card(g, c, up):
@@ -359,7 +374,7 @@ def build_game(g):
   <button class="lb-next" type="button" aria-label="Image suivante">›</button>
 </dialog>"""
     write(f"jeux/{slug}/index.html", page(title=f"{g['title']} | Ramdam Games", description=g["short"], body=body,
-                                         theme=g["theme"], depth=2, path=f"jeux/{slug}/", og_image=g["hero_image"]))
+                                         theme=g["theme"], depth=2, path=f"jeux/{slug}/", og_image=f"og/{slug}.jpg"))
 
     toc = "".join(f'<a href="#{g["slug"]}-{c["version"].replace(" ", "-").lower()}"><strong>{e(c["version"])}</strong><span>{fr_date(c["date"])}</span></a>' for c in g["changelog"])
     entries = "".join(entry_html(g, c, up) for c in g["changelog"])
@@ -376,7 +391,7 @@ def build_game(g):
 </main>"""
     write(f"jeux/{slug}/journal.html", page(title=f"Journal de {g['title']} | Ramdam Games",
                                            description=f"Notes de version et journal de développement de {g['title']}.",
-                                           body=jbody, theme=g["theme"], depth=2, path=f"jeux/{slug}/journal.html", og_image=g["hero_image"]))
+                                           body=jbody, theme=g["theme"], depth=2, path=f"jeux/{slug}/journal.html", og_image=f"og/{slug}.jpg"))
 
 
 def build_journal():
@@ -394,7 +409,7 @@ def build_journal():
   <div class="entries all">{entries}</div>
 </main>"""
     write("journal.html", page(title="Journal | Ramdam Games", description="Notes de version de La Fourrière et de Bloomstead.",
-                               body=body, theme="studio", depth=0, path="journal.html"))
+                               body=body, theme="studio", depth=0, path="journal.html", og_image="og/home.jpg"))
 
 
 def build_404():
