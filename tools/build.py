@@ -152,11 +152,40 @@ def build_home():
     s = DATA["studio"]
     about = "".join(f"<p>{e(p)}</p>" for p in s["about"])
     n_versions = sum(len(g["changelog"]) for g in DATA["games"])
+    cast = "assets/img/fourriere/cast/"
+    perches = "".join(
+        f'<img class="perch {cls}" src="{src}" alt="" style="--d:{d}">'
+        for cls, src, d in (
+            ("p-girafe back", cast + "girafe.webp", ".55"),
+            ("p-autruche back", cast + "autruche.webp", ".45"),
+            ("p-bernard", cast + "bernard.webp", "1"),
+            ("p-lama", cast + "lama.webp", ".8"),
+            ("p-sprout", "assets/img/bloomstead/mascot.png", ".7"),
+            ("p-poule", cast + "poule.webp", ".9"),
+            ("p-monique", cast + "monique.webp", "1.25"),
+            ("p-manchot", cast + "manchot.webp", "1.1"),
+        ))
+    runners = ["belier", "cochon", "kangourou", "mouton", "zebre", "lion", "poule", "elephant", "chevre",
+               "rhinoceros", "lapin", "tortue", "singe", "flamant", "panthere"]
+    parade = "".join(f'<img src="{cast}{k}.webp" alt="" loading="lazy">' for k in runners) * 2
+    games_links = " et ".join(f'<a href="jeux/{g["slug"]}/index.html">{e(g["title"])}</a>' for g in DATA["games"])
     body = f"""<main>
+<section class="ramdam" aria-label="Ramdam Games">
+  <div class="ramdam-in">
+    <h1 class="wordmark" aria-label="Ramdam Games">
+      <span class="word" aria-hidden="true"><span>R</span><span>a</span><span>m</span><span>d</span><span>a</span><span>m</span></span>
+      {perches}
+      <span class="games" aria-hidden="true">games</span>
+    </h1>
+    <p class="ramdam-sub">Studio de jeux indépendant, en France. Tout le zoo s'est échappé ici : {games_links}.</p>
+    <a class="ramdam-down" href="#jeux">Voir les jeux</a>
+  </div>
+  <div class="parade" aria-hidden="true"><div class="parade-track">{parade}</div></div>
+</section>
+
 <section class="home-hero" id="jeux">
   <div class="home-head wrap">
-    <p class="kicker">Ramdam Games</p>
-    <h1>Les jeux</h1>
+    <h2>Les jeux</h2>
     <p class="lead">Choisis un jeu pour voir ses images, ce qu'on y fait et tout ce qui a changé depuis la dernière version.</p>
   </div>
   <div class="picker">

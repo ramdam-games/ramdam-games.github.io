@@ -26,6 +26,19 @@
     });
   }
 
+  const stage = document.querySelector(".ramdam");
+  if (stage && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    stage.addEventListener("pointermove", (ev) => {
+      const r = stage.getBoundingClientRect();
+      stage.style.setProperty("--mx", ((ev.clientX - r.left) / r.width * 2 - 1).toFixed(3));
+      stage.style.setProperty("--my", ((ev.clientY - r.top) / r.height * 2 - 1).toFixed(3));
+    });
+    stage.addEventListener("pointerleave", () => {
+      stage.style.setProperty("--mx", 0);
+      stage.style.setProperty("--my", 0);
+    });
+  }
+
   const chips = [...document.querySelectorAll(".chip")];
   const entries = [...document.querySelectorAll(".entries.all .entry")];
   chips.forEach((chip) => chip.addEventListener("click", () => {
