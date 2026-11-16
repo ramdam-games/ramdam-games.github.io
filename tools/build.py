@@ -173,8 +173,8 @@ def build_home():
         ))
     runners = [("lapin", .5), ("zebre", 1.1), ("elephant", 1.45), ("cochon", .75), ("poule", .55),
                ("chasseur-filet", 1.6, "chaser"), ("autruche", 1.5), ("lion", 1), ("mouton", .8),
-               ("chasseur-fusil", 1.3, "hunter"), ("camionnette", 1.1, "chaser"),
-               ("chasseur-prise", 1.55, "chaser")]
+               ("chasseur-fusil", 1.3, "hunter"), ("chasseur-prise", 1.55, "chaser"),
+               ("camionnette", 1.1, "van")]
     parade = "".join(
         f'<img class="{r[2] if len(r) > 2 else "runner"}" src="{cast}{r[0]}.webp" alt="" style="--h:{r[1]}">'
         for r in runners) * 2

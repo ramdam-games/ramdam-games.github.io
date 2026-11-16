@@ -546,13 +546,13 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .parade img:nth-child(3n+1) { animation-delay: -.14s; }
 .parade img:nth-child(3n+2) { animation-delay: -.28s; }
 .parade .chaser { animation-duration: .26s; margin-left: -18px; }
-.parade .hunter { animation: none; margin-left: 30px; margin-right: 90px; }
-.parade img[src*="camionnette"] { margin-left: 40px; }
-.parade img[src*="chasseur-prise"] { margin-left: 40px; margin-right: 160px; }
+.parade .hunter { animation: none; margin-left: 40px; margin-right: 110px; }
+.parade .van { animation: rumble .18s linear infinite alternate; margin-left: 10px; margin-right: 170px; }
 @keyframes rise { from { transform: translateY(.45em); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes drop { from { transform: translateY(-1.4em) rotate(-8deg); opacity: 0; } 55% { opacity: 1; } to { transform: none; opacity: 1; } }
 @keyframes sway { from { transform: rotate(-2.2deg); } to { transform: rotate(2.2deg); } }
 @keyframes run { to { transform: translateX(-50%); } }
+@keyframes rumble { from { transform: translateY(0); } to { transform: translateY(-2px); } }
 @keyframes trot { from { transform: translateY(0) rotate(-2deg); } to { transform: translateY(-9px) rotate(2deg); } }
 @media (max-width: 900px) {
   .village { position: relative; right: auto; width: 100%; height: clamp(130px, 34vw, 220px); margin-top: 30px; }
