@@ -1,5 +1,29 @@
 [
   {
+    "version": "Build du 18 novembre",
+    "date": "2026-11-18",
+    "new": [
+      "Painted title screen, sticker menus, real models for the pound and the fair, soft boss gauge",
+      "Thrown, down and out redone: body seen from outside, things left where one falls"
+    ],
+    "improved": [],
+    "fixed": [],
+    "tech": 1,
+    "lang": "en"
+  },
+  {
+    "version": "Build du 17 novembre",
+    "date": "2026-11-17",
+    "new": [
+      "Paid first jobs, real water and fishing, new menus, and a round of fixes",
+      "Shop stalls and pound relays as full models with painted sign boards"
+    ],
+    "improved": [],
+    "fixed": [],
+    "tech": 0,
+    "lang": "en"
+  },
+  {
     "version": "Build du 16 novembre",
     "date": "2026-11-16",
     "new": [
