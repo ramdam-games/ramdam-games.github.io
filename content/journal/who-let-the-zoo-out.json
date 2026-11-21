@@ -1,5 +1,24 @@
 [
   {
+    "version": "Build du 21 novembre",
+    "date": "2026-11-21",
+    "new": [
+      "Twelve languages, the machine's language by default, money in dollars",
+      "Restless bosses, a colleague helps you up, review fixes",
+      "Who Let the Zoo Out, live title, knock-out screen, quiet HUD",
+      "Eat to get a heart back, a wait to get up, far fewer lines on screen",
+      "Virtual keyboard and mouse, log book and a first walk to the counter",
+      "Music for each moment, missing sounds, calmer levels"
+    ],
+    "improved": [],
+    "fixed": [
+      "Plant the dart in the body one sees, not on the box round it",
+      "Bug hunt over the week's work, zoo ticket office, in-hand tile"
+    ],
+    "tech": 1,
+    "lang": "en"
+  },
+  {
     "version": "Build du 18 novembre",
     "date": "2026-11-18",
     "new": [
