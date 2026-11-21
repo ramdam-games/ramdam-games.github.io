@@ -34,8 +34,8 @@ def mark_svg(size=34):
             'm5.8-14h4.2c2.4 0 3.7-1 3.7-2.6 0-1.7-1.3-2.6-3.7-2.6h-4.2z" fill="var(--brand-ink)"/></svg>')
 
 
-def page(*, title, description, body, theme, depth, path, og_image=None, body_class=""):
-    up = "../" * depth
+def page(*, title, description, body, theme, depth, path, og_image=None, body_class="", root=False):
+    up = "/" if root else "../" * depth
     base = "https://ramdam-games.github.io/"
     og = ""
     if og_image:
@@ -95,15 +95,19 @@ def nav(up):
 </header>"""
 
 
+SOCIALS = (("youtube", "YouTube"), ("tiktok", "TikTok"), ("instagram", "Instagram"))
+
+
 def footer(up):
     s = DATA["studio"]
     games = "".join(f'<a href="{up}jeux/{g["slug"]}/index.html">{e(g["title"])}</a>' for g in DATA["games"])
+    socials = "".join(f'<a href="{e(s[k])}">{n}</a>' for k, n in SOCIALS)
     return f"""<footer class="foot">
   <div class="foot-in">
     <div class="foot-brand">{mark_svg(42)}<div><strong>Ramdam Games</strong><span>{e(s["tagline"])}</span></div></div>
     <div class="foot-cols">
       <div><h4>Jeux</h4>{games}</div>
-      <div><h4>Suivre</h4><a href="{up}journal.html">Journal de développement</a><a href="{e(s["discord"])}">Discord</a><a href="{e(s["github"])}">GitHub</a></div>
+      <div><h4>Suivre</h4><a href="{up}journal.html">Journal de développement</a><a href="{e(s["discord"])}">Discord</a><a href="{e(s["github"])}">GitHub</a>{socials}</div>
     </div>
   </div>
   <p class="foot-note">© 2026 Ramdam Games</p>
@@ -122,7 +126,8 @@ def status(g):
 def game_title(g, cls="title"):
     if g["theme"] == "bloomstead":
         return f'<h1 class="{cls} title-img"><img src="{{up}}assets/img/bloomstead/logo.png" alt="Bloomstead" width="1600" height="480"></h1>'
-    return f'<h1 class="{cls} title-sign"><span>La</span> Fourrière</h1>'
+    top, name = g["sign"]
+    return f'<h1 class="{cls} title-sign"><span>{e(top)}</span> {e(name)}</h1>'
 
 
 def entry_html(g, c, up, show_game=False):
@@ -212,7 +217,8 @@ def build_home():
     village = "".join(
         f'<img src="assets/img/fourriere/{src}.webp" alt="" style="left:{left}%;height:{h}%;z-index:{z};--d:{d};--i:{i}">'
         for i, (src, left, h, z, d) in enumerate(village_items))
-    games_links = " et ".join(f'<a href="jeux/{g["slug"]}/index.html">{e(g["title"])}</a>' for g in DATA["games"])
+    games_links = " et dans ".join(f'<a href="jeux/{g["slug"]}/index.html">{e(g["title"])}</a>' for g in DATA["games"])
+    socials = "".join(f'<a class="btn ghost" href="{e(s[k])}">{n}</a>' for k, n in SOCIALS)
     body = f"""<main>
 <section class="ramdam" aria-label="Ramdam Games">
   <div class="ramdam-in">
@@ -221,7 +227,7 @@ def build_home():
       {perches}
       <span class="games" aria-hidden="true">games</span>
     </h1>
-    <p class="ramdam-sub">Studio de jeux indépendant, en France. Tout le zoo s'est échappé ici : {games_links}.</p>
+    <p class="ramdam-sub">Studio de jeux indépendant, en France. Tout le zoo s'est échappé ici, dans {games_links}.</p>
     <a class="ramdam-down" href="#jeux">Voir les jeux</a>
     <div class="village" aria-hidden="true">{village}</div>
   </div>
@@ -247,7 +253,7 @@ def build_home():
   <div class="studio-text">
     <h2>Le studio</h2>
     {about}
-    <p class="studio-links"><a class="btn" href="{e(s['discord'])}">Rejoindre le Discord</a><a class="btn ghost" href="{e(s['github'])}">GitHub</a></p>
+    <p class="studio-links"><a class="btn" href="{e(s['discord'])}">Rejoindre le Discord</a><a class="btn ghost" href="{e(s['github'])}">GitHub</a>{socials}</p>
   </div>
   <dl class="studio-facts">
     <div><dt>{len(DATA['games'])}</dt><dd>jeux en cours</dd></div>
@@ -306,6 +312,12 @@ def build_game(g):
   <div class="block-head"><h2>{e(g['people_title'])}</h2></div>
   <div class="people">{people}</div>
   <div class="gear">{gear}</div>
+</section>"""
+        if g.get("crew"):
+            crew = "".join(f"""<figure class="person"><img src="{img}fourriere/cast/{k}.webp" alt="{e(n)}" loading="lazy"><figcaption><strong>{e(n)}</strong><span>{e(d)}</span></figcaption></figure>""" for k, n, d in g["crew"])
+            extra += f"""<section class="wrap block">
+  <div class="block-head"><h2>{e(g['crew_title'])}</h2><p>{e(g['crew_lead'])}</p></div>
+  <div class="people">{crew}</div>
 </section>"""
     if g.get("machines"):
         tiles = "".join(f"""<figure class="machine"><img src="{img}bloomstead/machines/{k}.png" alt="" loading="lazy" width="100" height="96"><figcaption><strong>{e(n)}</strong><span>{e(d)}</span></figcaption></figure>""" for k, n, d in g["machines"])
@@ -408,14 +420,15 @@ def build_journal():
   </header>
   <div class="entries all">{entries}</div>
 </main>"""
-    write("journal.html", page(title="Journal | Ramdam Games", description="Notes de version de La Fourrière et de Bloomstead.",
+    names = " et de ".join(g["title"] for g in DATA["games"])
+    write("journal.html", page(title="Journal | Ramdam Games", description=f"Notes de version de {names}.",
                                body=body, theme="studio", depth=0, path="journal.html", og_image="og/home.jpg"))
 
 
 def build_404():
     body = """<main class="wrap block lost"><h1>Page introuvable</h1><p>Elle a dû s'échapper avec le reste du zoo.</p><p><a class="btn" href="/index.html">Retour à l'accueil</a></p></main>"""
     write("404.html", page(title="Page introuvable | Ramdam Games", description="Page introuvable.", body=body,
-                           theme="studio", depth=0, path="404.html"))
+                           theme="studio", depth=0, path="404.html", root=True))
 
 
 def build_redirects():
@@ -433,6 +446,37 @@ def build_redirects():
 <script>location.replace("{target}" + location.hash);</script>
 </head>
 <body><p>This page moved to <a href="{target}">ramdam-games.github.io{target}</a>.</p></body>
+</html>
+""")
+
+
+def build_moved_games():
+    """A game that changed its name keeps its old address alive, anchors of journal versions included."""
+    base = "https://ramdam-games.github.io"
+    for g in DATA["games"]:
+        image = f"{base}/assets/og/{g['slug']}.jpg?v={asset_version('og/' + g['slug'] + '.jpg')}"
+        for old in g.get("former_slugs", []):
+            for name, title, description in (
+                    ("index.html", f"{g['title']} | Ramdam Games", g["short"]),
+                    ("journal.html", f"Journal de {g['title']} | Ramdam Games",
+                     f"Notes de version et journal de développement de {g['title']}.")):
+                target = f"/jeux/{g['slug']}/" + ("" if name == "index.html" else name)
+                write(f"jeux/{old}/{name}", f"""<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>{e(title)}</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{base}{target}">
+<meta http-equiv="refresh" content="0; url={target}">
+<meta property="og:title" content="{e(title)}">
+<meta property="og:description" content="{e(description)}">
+<meta property="og:url" content="{base}{target}">
+<meta property="og:image" content="{image}">
+<meta name="twitter:card" content="summary_large_image">
+<script>location.replace("{target}" + location.hash.replace("#{old}-", "#{g['slug']}-"));</script>
+</head>
+<body><p>Cette page a changé d'adresse. Elle se trouve maintenant ici.</p><p><a href="{target}">ramdam-games.github.io{target}</a></p></body>
 </html>
 """)
 
@@ -457,6 +501,7 @@ def main():
     build_journal()
     build_404()
     build_redirects()
+    build_moved_games()
     with open(os.path.join(DOCS, "assets", "favicon.svg"), "w", encoding="utf-8") as f:
         f.write(mark_svg(64).replace('class="mark" ', 'xmlns="http://www.w3.org/2000/svg" ')
                 .replace("var(--brand-ink)", "#1b0f0b").replace("var(--brand)", "#ff5a36"))

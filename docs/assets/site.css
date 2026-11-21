@@ -172,7 +172,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 /* game titles */
 .title-sign {
-  display: inline-flex; flex-direction: column; align-items: flex-start;
+  display: inline-flex; flex-direction: column; align-items: center; justify-self: start;
   font-family: "Zilla Slab", serif; font-weight: 700;
   font-size: clamp(46px, 6.4vw, 92px); line-height: .9; text-transform: uppercase;
   color: #fff6df;
@@ -254,7 +254,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .t-fourriere .feature:nth-child(even) figure { transform: rotate(.8deg); }
 .t-bloomstead .feature figure { border: 8px solid var(--wood); border-radius: 6px; box-shadow: inset 0 0 0 2px var(--wood-dk), 0 24px 50px -24px #000; }
 
-/* cast (Fourrière) */
+/* cast (Who Let the Zoo Out) */
 .cast-band { margin-top: clamp(56px, 8vw, 104px); background: var(--navy); color: #fff6df; padding-bottom: clamp(56px, 8vw, 96px); --muted: #c9d3ee; --ink: #fff6df; }
 .cast-band .block-head h2 { color: #fff6df; }
 

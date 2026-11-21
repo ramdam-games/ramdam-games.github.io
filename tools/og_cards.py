@@ -15,7 +15,7 @@ BASE = "http://localhost:8765/"
 NAV = 58
 CARDS = {
     "home": "index.html",
-    "la-fourriere": "jeux/la-fourriere/index.html",
+    "who-let-the-zoo-out": "jeux/who-let-the-zoo-out/index.html",
 }
 CAPSULES = {"bloomstead": os.path.join(ROOT, "docs", "assets", "img", "bloomstead", "main_capsule.png")}
 

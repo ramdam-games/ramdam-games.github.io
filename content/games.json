@@ -9,12 +9,22 @@
     ],
     "discord": "https://discord.gg/k4crjTtuuf",
     "github": "https://github.com/ramdam-games",
-    "share": "Studio de jeux indépendant d'une personne, en France. Dans La Fourrière, tout le zoo de Poulaillac s'est échappé pendant la fête du village et il faut le rattraper, seul ou jusqu'à quatre. Dans Bloomstead, de petites machines font refleurir un monde éteint, case après case."
+    "youtube": "https://www.youtube.com/@RamdamGames",
+    "tiktok": "https://www.tiktok.com/@ramdamgames",
+    "instagram": "https://www.instagram.com/ramdamgames/",
+    "share": "Studio de jeux indépendant d'une personne, en France. Dans Who Let the Zoo Out, tout le zoo de Poulaillac s'est échappé pendant la fête du village et il faut le rattraper, seul ou jusqu'à quatre. Dans Bloomstead, de petites machines font refleurir un monde éteint, case après case."
   },
   "games": [
     {
-      "slug": "la-fourriere",
-      "title": "La Fourrière",
+      "slug": "who-let-the-zoo-out",
+      "former_slugs": [
+        "la-fourriere"
+      ],
+      "title": "Who Let the Zoo Out",
+      "sign": [
+        "Who Let the",
+        "Zoo Out"
+      ],
       "theme": "fourriere",
       "status": "En développement",
       "status_kind": "dev",
@@ -171,6 +181,14 @@
         ]
       ],
       "people_title": "Les habitants",
+      "crew_title": "Les collègues",
+      "crew_lead": "Quatre agents de plus sont en préparation pour renforcer l'équipe.",
+      "crew": [
+        ["colosse", "Le colosse", "Sa combinaison a rétréci au lavage. Il n'en a pas demandé d'autre."],
+        ["maitre-nageur", "Le maître-nageur", "En congé depuis mardi. Il est venu quand même."],
+        ["peignoir", "Le lève-tard", "Parti de chez lui sans repasser par la chambre."],
+        ["mascotte", "La mascotte", "Le costume de la kermesse. Personne n'a osé lui dire."]
+      ],
       "people": [
         [
           "maire",
@@ -278,7 +296,7 @@
         ],
         [
           "Langues",
-          "Français, anglais"
+          "Douze langues, dont le français et l'anglais"
         ],
         [
           "Moteur",
@@ -297,7 +315,7 @@
         ]
       ],
       "source": {
-        "repo": "ramdam-games/la-fourriere",
+        "repo": "ramdam-games/who-let-the-zoo-out",
         "local": "E:/CoopBase",
         "mode": "days"
       }

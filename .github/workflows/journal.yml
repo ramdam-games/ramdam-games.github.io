@@ -32,12 +32,12 @@ jobs:
             GIT_SSH_COMMAND="ssh -i ~/.ssh/key_$1 -o IdentitiesOnly=yes" \
               git clone --quiet --bare --filter=blob:none "git@github.com:ramdam-games/$3.git" "_games/$1"
           }
-          fetch la-fourriere "$FOURRIERE_KEY" la-fourriere
+          fetch who-let-the-zoo-out "$FOURRIERE_KEY" who-let-the-zoo-out
           fetch bloomstead "$BLOOMSTEAD_KEY" bloodstead
 
       - name: Update the journals and rebuild the pages
         run: |
-          python tools/sync_journal.py --checkout la-fourriere=_games/la-fourriere --checkout bloomstead=_games/bloomstead
+          python tools/sync_journal.py --checkout who-let-the-zoo-out=_games/who-let-the-zoo-out --checkout bloomstead=_games/bloomstead
           python tools/build.py
 
       - name: Publish if anything changed
