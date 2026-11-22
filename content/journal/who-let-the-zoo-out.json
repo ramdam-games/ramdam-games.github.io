@@ -3,7 +3,8 @@
     "version": "Build du 22 novembre",
     "date": "2026-11-22",
     "new": [
-      "One font for the HUD, food that heals, four more characters"
+      "One font for the HUD, food that heals, four more characters",
+      "Solid fences and a railing behind the pound, chore: remove what the game no longer uses"
     ],
     "improved": [],
     "fixed": [],
