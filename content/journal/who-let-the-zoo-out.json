@@ -1,5 +1,16 @@
 [
   {
+    "version": "Build du 22 novembre",
+    "date": "2026-11-22",
+    "new": [
+      "One font for the HUD, food that heals, four more characters"
+    ],
+    "improved": [],
+    "fixed": [],
+    "tech": 1,
+    "lang": "en"
+  },
+  {
     "version": "Build du 21 novembre",
     "date": "2026-11-21",
     "new": [
@@ -8,14 +19,15 @@
       "Who Let the Zoo Out, live title, knock-out screen, quiet HUD",
       "Eat to get a heart back, a wait to get up, far fewer lines on screen",
       "Virtual keyboard and mouse, log book and a first walk to the counter",
-      "Music for each moment, missing sounds, calmer levels"
+      "Music for each moment, missing sounds, calmer levels",
+      "Full screen by default, empty hands on the satchel key, steadier carrying"
     ],
     "improved": [],
     "fixed": [
       "Plant the dart in the body one sees, not on the box round it",
       "Bug hunt over the week's work, zoo ticket office, in-hand tile"
     ],
-    "tech": 1,
+    "tech": 2,
     "lang": "en"
   },
   {
